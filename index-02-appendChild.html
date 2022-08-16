@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Web 02</title>
+  <style>
+    body {
+      background-color: #E84855;
+      color: #fff;
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 60px 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- nenhum elemento HTML -->
+
+  <script>
+    //Cria novos elementos
+    const el1 = document.createElement("div")
+    const el2 = document.createTextNode('Hello World!');
+    const hr = document.createElement('hr')
+
+    //Elementos precisam ser adicionados em um elemento pai
+    const body = document.querySelector("body")
+    body.appendChild(el1)
+    el1.appendChild(el2)
+    el1.appendChild(hr)
+</script>
+</body>
+</html>
