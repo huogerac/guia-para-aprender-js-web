@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Web 02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #252422;
+      color: #fff;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .menu {
+      height: 80px;
+      line-height: 80px;
+    }
+    .conteudo {
+      height: 300px;
+      padding: 30px;
+    }
+    .conteudo1 {
+      background-color: #E84855;
+    }
+    .conteudo2 {
+      background-color: #C3EB78;
+      color: #1C0B19;
+    }
+    .lista {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <nav class="menu">
+      <h2>Menu</h2>
+    </nav>
+
+    <section class="conteudo conteudo1">
+      <ul id="lista1" class="lista">
+        <li class="item item1">Item 1</li>
+        <li class="item item2">Item 2</li>
+        <li class="item item3">Item 3</li>
+        <li class="item item4">Item 4</li>
+      </ul>
+
+    </section>
+
+    <section class="conteudo conteudo2">
+      <ul id="lista2" class="lista">
+        <li class="item item1">Item 1</li>
+        <li class="item item2">Item 2</li>
+        <li class="item item3">Item 3</li>
+        <li class="item item4">Item 4</li>
+      </ul>
+    </section>
+
+    <footer class="conteudo">
+      <p class="text1">JavaScript Web</p>
+      <p class="text2">Guia JS</p>
+      <p>
+        <a href="https://github.com/huogerac/guia-para-aprender-js-web">Código fonte</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    //1
+    document.querySelector('nav');
+    document.querySelector('nav h2');
+    
+    //2
+    document.querySelector('.conteudo');
+    document.querySelectorAll('.conteudo');
+    document.querySelectorAll('.conteudo1');
+    /*
+    IMPORTANTE
+    Veja a diferença entre HTMLCollection vs NodeList
+    NodeLists é estático e não atualizar se novos filhos forem adicionados
+    https://medium.com/@layne_celeste/htmlcollection-vs-nodelist-4b83e3a4fb4b
+    */
+
+    //3
+    document.getElementsByTagName('p')
+    document.getElementsByTagName('footer')
+    document.getElementsByTagName('footer').item(0)
+    document.getElementsByTagName('footer')[0]
+
+    //4
+    document.querySelector("#lista2")
+    document.getElementById("lista2")
+    document.getElementById("lista2").parentNode
+    document.getElementById("lista2").querySelectorAll('li')
+    document.getElementById("lista2").querySelectorAll('li').forEach((item) => console.log(item))
+
+    //5
+    document.getElementById("lista2").querySelectorAll('.item1')
+    document.querySelectorAll('#lista2 .item1')
+    document.getElementById("lista2").querySelectorAll('.item1').item(0).textContent
+
+    //6 - ALTERANDO
+    const item1 = document.getElementById("lista2").querySelectorAll('.item1').item(0)
+    item1.textContent = 'ITEM 1 - Alterado'
+    item1.innerHTML = '<strong>ITEM 1 - Alterado</strong>'
+
+
+    
+  </script>
+</body>
+</html>

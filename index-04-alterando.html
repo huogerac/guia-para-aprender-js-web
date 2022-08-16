@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Web 02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #252422;
+      color: #fff;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .menu {
+      height: 80px;
+      line-height: 80px;
+    }
+    .conteudo {
+      height: 300px;
+      padding: 30px;
+    }
+    .conteudo1 {
+      background-color: #E84855;
+    }
+    .conteudo2 {
+      background-color: #C3EB78;
+      color: #1C0B19;
+    }
+    .lista {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <nav class="menu">
+      <h2>Menu</h2>
+    </nav>
+
+    <section class="conteudo conteudo1">
+      <ul id="lista1" class="lista">
+        <li class="item item1">Item 1</li>
+        <li class="item item2">Item 2</li>
+        <li class="item item3">Item 3</li>
+        <li class="item item4">Item 4</li>
+      </ul>
+
+    </section>
+
+    <section class="conteudo conteudo2">
+      <ul id="lista2" class="lista">
+        <li class="item item1">Item 1</li>
+        <li class="item item2">Item 2</li>
+        <li class="item item3">Item 3</li>
+        <li class="item item4">Item 4</li>
+      </ul>
+    </section>
+
+    <footer class="conteudo">
+      <p class="text1">JavaScript Web</p>
+      <p class="text2">Guia JS</p>
+      <p>
+        <a href="https://github.com/huogerac/guia-para-aprender-js-web">Código fonte</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+
+    const elLista = document.getElementById("lista2")
+    const elItem1 = elLista.querySelectorAll('.item1').item(0)
+
+    //1 - Alterando valores
+    elItem1.textContent = 'ITEM 1 - Alterado'
+    elItem1.innerHTML = '<strong>ITEM 1 - Alterado</strong>'
+
+    //2 - Criando filhos
+    const newEl5 = document.createElement('li')
+    let text = document.createTextNode('Item 5 (NOVO)')
+    newEl5.appendChild(text)
+    // Precisa adicionar em algum lugar...
+    elLista.appendChild(newEl5)
+
+    //3 - Alternativa
+    const newEl6 = document.createElement('li')
+    newEl6.textContent = 'Item 6 (NOVO)'
+    // Precisa adicionar em algum lugar...
+    elLista.appendChild(newEl6)
+
+    //4 - Removendo
+    const elQueSeraRemovido = document.querySelectorAll('#lista2 .item4').item(0)
+    document.querySelector('#lista2').removeChild(elQueSeraRemovido)
+
+    //5 Adicionando atributos
+    const newEl7 = document.createElement('li')
+    newEl7.textContent = 'Item 7 (NOVO)'
+    newEl7.setAttribute('class', 'item item7 itemNovo')
+    newEl7.classList.add('foo')
+    newEl7.classList.remove('foo')
+    newEl7.classList.toggle('baz')
+
+    // Precisa adicionar em algum lugar...
+    elLista.appendChild(newEl7)
+
+
+  </script>
+</body>
+</html>
